@@ -1,2 +1,26 @@
 import Joi from "joi"
-export const getRepositoriesSchema = Joi.object({})
+import { GetRepositoriesSearchQuery } from "../@types"
+
+const currentDate = new Date().toISOString().split("T")[0]
+export const getRepositoriesSchema = Joi.object<GetRepositoriesSearchQuery>({
+  fromDate: Joi.date()
+    .max(`${currentDate}`)
+    .iso()
+    .messages({ "date.format": `fromDate format is YYYY-MM-DD`, "date.max": `from date must be less than ${currentDate}` })
+    .optional(),
+  pageSize: Joi.number()
+    .min(10)
+    .max(100)
+    .messages({
+      "number.format": "pageSize must be a number",
+      "number.min": `Page size must be greater than or equal 10`,
+      "number.max": `Page size must be less than or equal 100`
+    })
+    .optional(),
+  programmingLanguage: Joi.string()
+    .min(2)
+    .messages({
+      "string.min": `Programming language must be greater than or equal 2 characters`
+    })
+    .optional()
+})
