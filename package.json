@@ -1,5 +1,5 @@
 {
-  "name": "tickets",
+  "name": "repositories-service",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,6 +9,7 @@
     "watch": "tsc -w",
     "build": "tsc",
     "test": "jest --watchAll --no-cache",
+    "test:coverage": "jest --coverage",
     "test:ci": "jest"
   },
   "jest": {
@@ -42,6 +43,7 @@
   "dependencies": {
     "@types/morgan": "^1.9.3",
     "axios": "^1.1.2",
+    "axios-mock-adapter": "^1.21.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",

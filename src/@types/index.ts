@@ -7,5 +7,5 @@ export interface RepositoryResponse<T> {
 export interface GetRepositoriesSearchQuery {
   pageSize: number
   fromDate: string
-  programmingLanguage: string
+  programmingLanguage?: string
 }

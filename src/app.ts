@@ -10,7 +10,10 @@ const app = express()
 const prefix = "/api"
 
 app.use(HttpError.initializer)
-app.use(morgan("common"))
+if (process.env.NODE_ENV !== "test") {
+  app.use(morgan("common"))
+}
+
 app.use(cors())
 app.set("trust proxy", 1)
 app.use(json())
