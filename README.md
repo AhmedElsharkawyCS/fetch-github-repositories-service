@@ -38,3 +38,10 @@ npm run test:coverage
 ## API documentation
 
 visit [https://documenter.getpostman.com/view/6200920/2s83zgvQxj](postman) to see the api documentation
+
+## TODO
+
+- add more tests
+- add more documentation
+- add eslint and prettier
+- add kubernetes deployment
